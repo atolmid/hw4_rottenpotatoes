@@ -1,5 +1,9 @@
 -#  This file is app/views/movies/index.html.haml
+
 %h1 All Movies
+
+- if @noDirector
+  %p= "'#{@noDirector}' has no director info"
 
 = form_tag movies_path, :method => :get, :id => 'ratings_form' do
   = hidden_field_tag "title_sort", true if @title_header
